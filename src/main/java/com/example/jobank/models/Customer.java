@@ -2,14 +2,13 @@ package com.example.jobank.models;
 
 import com.example.jobank.enums.Gender;
 import com.example.jobank.enums.MaritalStatus;
-import jakarta.persistence.Entity;
-import jakarta.persistence.EnumType;
-import jakarta.persistence.Enumerated;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+
+import java.time.LocalDate;
 
 @AllArgsConstructor
 @NoArgsConstructor
@@ -17,11 +16,13 @@ import lombok.Setter;
 @Setter
 @Entity
 @Table(name = "customer_tbl")
-public class customer extends Base{
+public class Customer extends Base{
+    @Column(unique = true)
     private String userId;
     private String firstName;
     private String middleName;
     private String lastName;
+    @Column(unique = true)
     private String phoneNumber;
     private String address;
     private String province;
@@ -30,14 +31,16 @@ public class customer extends Base{
     private String selfieUrl;
     private String frontOfIdUrl;
     private String backOfIdUrl;
-    private Integer dateOfBirth;
+    private LocalDate dateOfBirth;
     private String utilityBillUrl;
+    @Column(unique = true)
     private String email;
     @Enumerated(EnumType.STRING)
     private Gender gender;
     private String nationality;
     @Enumerated(EnumType.STRING)
     private MaritalStatus maritalStatus;
+    @Column(unique = true)
     private String bvn;
     private String nextOfKin;
     private String addressOfNextOfKin;
