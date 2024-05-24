@@ -54,6 +54,7 @@ public class Customer extends Base{
     @Enumerated(EnumType.STRING)
     private Gender genderOfNextOfKin;
     private Boolean isActive;
+    private String password;
 
 
 }
