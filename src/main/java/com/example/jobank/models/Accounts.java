@@ -15,7 +15,7 @@ import java.math.BigDecimal;
 @Getter
 @Setter
 @Entity
-@Table
+@Table(name = "accounts_tbl")
 public class Accounts extends Base{
     private String userId;
     private AccountType typeOfAccount;

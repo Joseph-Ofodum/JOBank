@@ -39,5 +39,6 @@ public class Admin extends Base{
     private String nationality;
     @Enumerated(EnumType.STRING)
     private MaritalStatus maritalStatus;
+    private String password;
     private Boolean isActive;
 }
